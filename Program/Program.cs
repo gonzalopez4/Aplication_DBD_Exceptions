@@ -27,6 +27,9 @@ namespace Full_GRASP_And_SOLID
             recipe.PrintRecipe();
         }
 
+        /// Precondicion: (product != Null) o (equipment != Null)
+        /// Postcondicion: Productos y Catalogos están en productCatalog y equipmentCatalog
+        /// Invarianza: (productCatalog != Null) and (equipmentCatalog != Null)
         private static void PopulateCatalogs()
         {
             AddProductToCatalog("Café", 100);
