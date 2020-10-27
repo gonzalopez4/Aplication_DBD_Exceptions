@@ -15,25 +15,25 @@ namespace Full_GRASP_And_SOLID
 
         public Product FinalProduct { get; set; }
 
-        /// Precondicion: Step != Null
+        /// Precondicion: (Step != Null)
         /// Postcondicion: El Step está en la lista
-        /// Invarianza: Step no fue modificado
+        /// Invarianza: (Step != Null)
         public void AddStep(Step step)
         {
             this.steps.Add(step);
         }
 
-        /// Precondicion: Step != Null
+        /// Precondicion: (Step != Null)
         /// Postcondicion: El Step no está la lista
-        /// Invarianza: Step no fue modificado
+        /// Invarianza: (Step != Null)
         public void RemoveStep(Step step)
         {
             this.steps.Remove(step);
         }
 
-        /// Precondicion: Steps != Null
+        /// Precondicion: (Steps != Null)
         /// Postcondicion: Se imprimen las recetas en la consola
-        /// Invarianza: Steps no fue modificado
+        /// Invarianza: (Steps != Null)
         public void PrintRecipe()
         {
             Console.WriteLine($"Receta de {this.FinalProduct.Description}:");
