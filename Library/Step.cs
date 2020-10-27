@@ -32,7 +32,7 @@ namespace Full_GRASP_And_SOLID
             {
                 if (value == null)
                 {
-                    throw new NullValueException("El valor ingresado es vacío");
+                    throw new System.Exception("Error: El valor ingresado es nulo");
                 }
                 this.input = value;
             }
@@ -56,7 +56,7 @@ namespace Full_GRASP_And_SOLID
                 }
                 else
                 {
-                    throw new NegativeValueException("La cantidad debe ser mayor que cero");
+                    throw new System.Exception("Error: La cantidad debe ser mayor que cero");
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace Full_GRASP_And_SOLID
                 }
                 else
                 {
-                    throw new NegativeValueException("El tiempo debe ser mayor que cero");
+                    throw new System.Exception("Error: El tiempo debe ser mayor que cero");
                 }
             }
         }
@@ -98,7 +98,7 @@ namespace Full_GRASP_And_SOLID
             {
                 if (value == null)
                 {
-                   throw new NullValueException("El equipamiento no puede ser vacío");
+                   throw new System.Exception("Error: El equipamiento no puede ser nulo");
                 }
                 else
                 {

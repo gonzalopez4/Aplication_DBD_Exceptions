@@ -3,7 +3,6 @@
 // Copyright (c) Programación II. Derechos reservados.
 // </copyright>
 //-------------------------------------------------------------------------
-
 using System;
 using System.Collections;
 
@@ -22,7 +21,7 @@ namespace Full_GRASP_And_SOLID
         {
             if (step == null)
             {
-                throw new NullValueException("El step ingresado es vacío");
+                throw new Exception("Error: El step ingresado es nulo");
             }
             this.steps.Add(step);
         }
@@ -34,11 +33,11 @@ namespace Full_GRASP_And_SOLID
         {
             if (step == null)
             {
-                throw new NullValueException("El step ingresado es vacío");
+                throw new Exception("Error: El step ingresado es nulo");
             }
             else if(!steps.Contains(step))
             {
-                throw new StepIsNotThereException("El step no pertenece y no se puede remover");
+                throw new Exception("Error: El step no pertenece y no se puede remover");
             }
             this.steps.Remove(step);
         }
