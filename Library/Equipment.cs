@@ -18,10 +18,43 @@ namespace Full_GRASP_And_SOLID
 
         /// Precondiciones: (Description != null)
         /// Postcondiciones: Description tiene un valor de retorno
-        public string Description { get; set; }
+        private string description;
+        public string Description 
+        {
+            get
+            {
+                return this.description;
+            }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new NullValueException("El valor ingresado es vacío");
+                }
+                this.description = value;
+            }
+        }
 
         /// Precondiciones: (HourlyCost > 0)
         /// Postcondiciones: HourlyCost tiene un valor de retorno
-        public double HourlyCost { get; set; }
+        private double hourlyCost;
+        public double HourlyCost 
+        {
+            get
+            {
+                return this.hourlyCost;
+            }
+            set 
+            {
+                if (value > 0)
+                {
+                   this.hourlyCost = value;
+                }
+                else
+                {
+                    throw new NegativeValueException("El HourlyCost debe ser mayor que cero");
+                }
+            }
+        }
     }
 }

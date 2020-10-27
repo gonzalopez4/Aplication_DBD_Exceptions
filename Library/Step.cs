@@ -21,21 +21,90 @@ namespace Full_GRASP_And_SOLID
         /// Precondiciones: (Product != null)
         /// Postcondiciones: Product tiene un valor de retorno asignado
         /// Invarianza: El tiempo no es modificado
-        public Product Input { get; set; }
+        private Product input;
+        public Product Input 
+        { 
+            get
+            {
+                return this.input;
+            }
+            set 
+            {
+                if (value == null)
+                {
+                    throw new NullValueException("El valor ingresado es vacío");
+                }
+                this.input = value;
+            }
+        }
 
         /// Precondiciones: (Quantity > 0)
         /// Postcondiciones: Quantity tiene un valor de retorno asignado
         /// Invarianza: El tiempo no es modificado
-        public double Quantity { get; set; }
+        private double quantity;
+        public double Quantity 
+        {
+            get
+            {
+                return this.quantity;
+            }
+            set 
+            {
+                if (value > 0)
+                {
+                   this.quantity = value;
+                }
+                else
+                {
+                    throw new NegativeValueException("La cantidad debe ser mayor que cero");
+                }
+            }
+        }
 
         /// Precondiciones: (Time > 0)
         /// Postcondiciones: Time tiene un valor de retorno asignado
         /// Invarianza: Input, Quantity, Equipment no son modificados
-        public int Time { get; set; }
+        private int time;
+        public int Time 
+        {
+            get
+            {
+                return this.time;
+            }
+            set 
+            {
+                if (value > 0)
+                {
+                   this.time = value;
+                }
+                else
+                {
+                    throw new NegativeValueException("El tiempo debe ser mayor que cero");
+                }
+            }
+        }
 
         /// Precondiciones: (Equipment != null)
         /// Postcondiciones: Equipment tiene un valor de retorno asignado
         /// Invarianza: El tiempo no es modificado
-        public Equipment Equipment { get; set; }
+        private Equipment equipment;
+        public Equipment Equipment 
+        {
+            get
+            {
+                return this.equipment;
+            }
+            set 
+            {
+                if (value == null)
+                {
+                   throw new NullValueException("El equipamiento no puede ser vacío");
+                }
+                else
+                {
+                    this.equipment = value;
+                }
+            }
+        }
     }
 }
