@@ -20,6 +20,10 @@ namespace Full_GRASP_And_SOLID
         /// Invarianza: (Step != Null)
         public void AddStep(Step step)
         {
+            if (step == null)
+            {
+                throw new NullValueException("El step ingresado es vacío");
+            }
             this.steps.Add(step);
         }
 
@@ -28,6 +32,14 @@ namespace Full_GRASP_And_SOLID
         /// Invarianza: (Step != Null)
         public void RemoveStep(Step step)
         {
+            if (step == null)
+            {
+                throw new NullValueException("El step ingresado es vacío");
+            }
+            else if(!steps.Contains(step))
+            {
+                throw new StepIsNotThereException("El step no pertenece y no se puede remover");
+            }
             this.steps.Remove(step);
         }
 

@@ -18,10 +18,44 @@ namespace Full_GRASP_And_SOLID
 
         /// Precondiciones: (Description != null), (unitCost > 0)
         /// Postcondiciones: Description tiene un valor de retorno
-        public string Description { get; set; }
+        private string description;
+        public string Description 
+        {
+             get
+             {
+                return this.description;
+             }
+             set
+             {
+                 if(string.IsNullOrWhiteSpace(value))
+                 {
+                     throw new NullValueException("La descripcion no puede ser vacía");
+                 }
+                 this.description = value;
+             } 
+        }
 
         /// Precondiciones: (UnitCost > 0)
         /// Postcondiciones: UnitCost tiene un valor de retorno
-        public double UnitCost { get; set; }
+        private double unitCost;
+        public double UnitCost 
+        {
+             get
+             {
+                return this.unitCost;
+             }
+             set
+             {
+                 if(value > 0)
+                 {
+                     this.unitCost = value;
+                 }
+                 else
+                 {
+                     throw new NegativeValueException("El valor de unitCost debe ser mayor que cero");
+                 }
+             } 
+             
+        }
     }
 }
