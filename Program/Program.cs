@@ -25,6 +25,24 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
             recipe.PrintRecipe();
+        
+            try
+            {
+                recipe.RemoveStep(null);
+            }
+            catch
+            {
+                Console.WriteLine("No se pueden eliminar Steps vacíos");
+            }
+
+            try
+            {
+                recipe.AddStep(null);
+            }
+            catch
+            {
+                Console.WriteLine("No se pueden agregar Steps vacíos");
+            }
         }
 
         /// Precondicion: (product != Null) o (equipment != Null)
