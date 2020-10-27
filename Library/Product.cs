@@ -29,7 +29,7 @@ namespace Full_GRASP_And_SOLID
              {
                  if(string.IsNullOrWhiteSpace(value))
                  {
-                     throw new System.Exception("Error: La descripcion no puede ser vacía");
+                     throw new NullValueException("La descripcion no puede ser vacía");
                  }
                  this.description = value;
              } 
@@ -52,7 +52,7 @@ namespace Full_GRASP_And_SOLID
                  }
                  else
                  {
-                     throw new System.Exception("Error: El valor de unitCost debe ser mayor que cero");
+                     throw new NegativeValueException("El valor de unitCost debe ser mayor que cero");
                  }
              } 
              

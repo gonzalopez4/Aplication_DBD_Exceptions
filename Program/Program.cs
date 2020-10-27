@@ -30,18 +30,18 @@ namespace Full_GRASP_And_SOLID
             {
                 recipe.RemoveStep(null);
             }
-            catch(Exception exception)
+            catch
             {
-                Console.WriteLine(exception.Message);
+                Console.WriteLine("No se pueden eliminar Steps vacíos");
             }
 
             try
             {
                 recipe.AddStep(null);
             }
-            catch(Exception exception)
+            catch
             {
-                Console.WriteLine(exception.Message);
+                Console.WriteLine("No se pueden agregar Steps vacíos");
             }
         }
 

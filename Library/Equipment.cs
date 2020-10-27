@@ -29,7 +29,7 @@ namespace Full_GRASP_And_SOLID
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new System.Exception("Error: El valor ingresado es nulo o vacío");
+                    throw new NullValueException("El valor ingresado es vacío");
                 }
                 this.description = value;
             }
@@ -52,7 +52,7 @@ namespace Full_GRASP_And_SOLID
                 }
                 else
                 {
-                    throw new System.Exception("Error: El HourlyCost debe ser mayor que cero");
+                    throw new NegativeValueException("El HourlyCost debe ser mayor que cero");
                 }
             }
         }
